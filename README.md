@@ -1,1 +1,10 @@
 # Wasserstein-Distance-Network-Figure
+## Background 
+Wasserstein Distance, also called the ‘Earth Movers Distance’,  was initially developed to answer the question of ‘what is the cheapest way to move a pile of sand to cover a sinkhole’ [1], and in a clustering context quantifies the total ‘cost’ of transporting one unit of mass from one probability distribution to another in a clustering context. In this way, Wasserstein Distance can be used to measure distances between any two cluster distributions and can be used with any type of cluster distribution (e.g. categorical or continuous clustering measures).  Wasserstein Distance ranges from 0 to infinity, and thus is interpreted in a relative context (i.e. there are not clear benchmarks for what is a large distance). We have selected this particular distance metric to compare clusters, because it performs well when applied to non-elliptical clusters [2].
+
+## Computational details 
+Computational details for the Wasserstein distance have been described elsewhere [2]. We calculated the distances using the ‘wasserstein’ function in the R package transport  (version, cite ). After computing WD across all possible P pairs of clusters, we convert each WDp p=1,..P, to a similarity metric Sp ranging from 0 – 1, as Sp  = 1 - [WDp – Min(WDp) ] / [Max(WDp) – min(WDp)]. A value of Sp = 1 indicates that the pair of clusters is the most similar among the set of P pairs, and Sp = 0 indicates that two distributions are the most different. Next,  we visualized the connections in the top 33% of similarities in a network figure, to identify groups of clusters with similar versus distinct probability distributions, using package NAME (version, cite).  
+
+1.	Ghosal, P. and B. Sen, Multivariate ranks and quantiles using optimal transport: Consistency, rates and nonparametric testing. The Annals of Statistics, 2022. 50(2): p. 1012-1037, 26.
+2.	Wallace, M.L., et al., Quantifying Distances Between Non-Elliptical Clusters to Enhance the Identification of Meaningful Emotional Reactivity Subtypes. Data Sci Sci, 2022. 1(1): p. 34-59.
+
