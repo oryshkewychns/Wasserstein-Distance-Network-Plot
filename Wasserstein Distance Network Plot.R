@@ -1,7 +1,6 @@
 library(transport)
 library(poLCA)
 library(qgraph)
-library(RColorBrewer)
 
 set.seed(1234)
 
